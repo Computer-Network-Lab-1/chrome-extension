@@ -15,7 +15,19 @@
     "topSites"
   ],
   "background": {
-    "scripts": ["interface.js"]
+    "scripts": ["interface.js", "options.js", "thirdParty/jquery-2.1.3.min.js", "spectrum.js"]
+  },
+  "content_scripts": [
+    {
+      "js": ["thirdParty/jquery-2.1.3.min.js", "spectrum.js", "options.js"],
+      "css": ["spectrum.css"],
+      "matches": ["file:///options.html"]
+    }
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com; object-src 'self'; connect-src 'self' http://104.236.139.123"
 }

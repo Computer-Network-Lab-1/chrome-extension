@@ -55,18 +55,17 @@ function genQuery(color) {
   return url
 }
 
+function init() {
+  chrome.storage.sync.get("color", function(items) {
+        color = JSON.parse(items.color);
+        console.log(color)
+        getNextImg(color);
+      });
+}
+
 function fakeInit() {
   var img = fakeGetNextImg("");
   document.body.style.backgroundImage = "url('" + img.url + "')"; 
-}
-
-function init() {
-  color = {
-    r : 0,
-    g : 128,
-    b : 255,
-  };
-  getNextImg(color);
 }
 
 //window.addEventListener("load", fakeInit);
