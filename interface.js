@@ -50,7 +50,7 @@ function getNextImg(color) {
 }
 
 function genQuery(color) {
-  server_ip = "http://104.236.139.123:80";
+  server_ip = "http://photo.yangjunrui.com";
   var url = server_ip + "/color?r=" + color.r + "&g=" + color.g + "&b=" + color.b;
   return url
 }
