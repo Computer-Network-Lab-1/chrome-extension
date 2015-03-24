@@ -1,16 +1,40 @@
 <html>
-  <head>
+
+<head>
     <title>New Tab</title>
     <style type="text/css">
-      body {
-        /*
-        background-image:url(http://img3.douban.com/view/photo/raw/public/p2211486755.jpg);
-        */
-        background-size:cover;
-      }
+    .rate_div {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    body {
+        background-size: cover;
+    }
+/*    .btn {
+        background: transparent;
+        color: #F2F2F2;
+        text-shadow: 2px 2px 4px #000000;
+        -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+        -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+        -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+        -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+        transition: background .2s ease-in-out, border .2s ease-in-out;
+    }*/
     </style>
+    <script src='thirdParty/jquery-2.1.3.min.js'></script>
+    <link rel="stylesheet" href="thirdParty/bootstrap-3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="thirdParty/bootstrap-3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="thirdParty/rippler/css/rippler.min.css">
+    <script src="thirdParty/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script src="thirdParty/rippler/js/jquery.rippler.min.js"></script>
+
+</head>
+<div class="rate_div" id="rate_div_id">
+</div>
+
+<body>
     <script src="interface.js"></script>
-  </head>
-  <body>
-  </body>
+</body>
+
 </html>
