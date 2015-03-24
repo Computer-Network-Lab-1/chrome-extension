@@ -1,12 +1,14 @@
 var imgurl
 
 $(document).ready(function() {
-  $(".rippler").rippler({
-    effectClass      :  'rippler-effect'
-    ,effectSize      :  16      // Default size (width & height)
-    ,addElement      :  'div'   // e.g. 'svg'(feature)
-    ,duration        :  400
-  });
+    $(".rippler").rippler({
+        effectClass: 'rippler-effect',
+        effectSize: 16 // Default size (width & height)
+            ,
+        addElement: 'div' // e.g. 'svg'(feature)
+            ,
+        duration: 400
+    });
 });
 
 $('#likeButton').on('click', function() {
@@ -61,36 +63,22 @@ function fakeGetNextImg(color) {
 }
 
 function getNextImg(color) {
-    var xmlHttp;
-    if (window.XMLHttpRequest) {
-        xmlHttp = new XMLHttpRequest();
-    } else {
-        if (window.ActiveXObject) {
-            try {
-                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (e) {
-                try {
-                    xmlHttp = newActiveXObject("Microsoft.XMLHTTP");
-                } catch (e) {}
-            }
+    $.ajax({
+        type: 'GET',
+        url: 'http://photo.yangjunrui.com/color',
+        data: {
+            r: color.r,
+            g: color.g,
+            b: color.b,
+        },
+        dataType: 'text',
+        success: function(XMLHttpRequest, textStatus) {
+            imgurl = XMLHttpRequest
+            $('#likeButton').removeClass("hidden");
+            $('#dislikeButton').removeClass("hidden");
+            $.backstretch(imgurl);
         }
-    }
-    xmlHttp.onreadystatechange = function() {
-            if (xmlHttp.readyState === 4) {
-                if (xmlHttp.status === 200) {
-                    imgurl = xmlHttp.responseText;
-                    $('#likeButton').removeClass("hidden");
-                    $('#dislikeButton').removeClass("hidden");
-                    $.backstretch(imgurl);
-                } else {
-                    // alert("xmlHttp.status ==" + xmlHttp.status);
-                }
-            }
-        }
-        //alert(genQuery(color));
-    xmlHttp.open('GET', genQuery(color), true);
-    //xmlHttp.setRequestHeader("Content-Type", "");
-    xmlHttp.send(null);
+    });
 }
 
 function genQuery(color) {
