@@ -81,7 +81,7 @@ function getNextImg(color) {
                     imgurl = xmlHttp.responseText;
                     $('#likeButton').removeClass("hidden");
                     $('#dislikeButton').removeClass("hidden");
-                    document.body.style.backgroundImage = "url('" + imgurl + "')";
+                    $.backstretch(imgurl);
                 } else {
                     // alert("xmlHttp.status ==" + xmlHttp.status);
                 }

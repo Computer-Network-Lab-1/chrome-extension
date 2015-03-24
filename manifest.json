@@ -15,10 +15,10 @@
         "topSites"
     ],
     "background": {
-        "scripts": ["interface.js", "options.js", "thirdParty/jquery-2.1.3.min.js", "spectrum.js", "thirdParty/bootstrap-3.3.4/js/bootstrap.min.js", "thirdParty/rippler/js/jquery.rippler.min.js"]
+        "scripts": ["interface.js", "options.js", "thirdParty/jquery-2.1.3.min.js", "spectrum.js", "thirdParty/bootstrap-3.3.4/js/bootstrap.min.js", "thirdParty/rippler/js/jquery.rippler.min.js", "thirdParty/jquery.backstretch.min.js"]
     },
     "content_scripts": [{
-        "js": ["thirdParty/jquery-2.1.3.min.js", "spectrum.js", "options.js", "thirdParty/bootstrap-3.3.4/js/bootstrap.min.js", "thirdParty/rippler/js/jquery.rippler.min.js"],
+        "js": ["thirdParty/jquery-2.1.3.min.js", "spectrum.js", "options.js", "thirdParty/bootstrap-3.3.4/js/bootstrap.min.js", "thirdParty/rippler/js/jquery.rippler.min.js", "thirdParty/jquery.backstretch.min.js"],
         "css": ["spectrum.css", "thirdParty/bootstrap-3.3.4/css/bootstrap.min.css", "thirdParty/bootstrap-3.3.4/css/bootstrap-theme.min.css", "thirdParty/rippler/css/rippler.min.css"],
         "matches": ["file:///options.html"]
     }],
