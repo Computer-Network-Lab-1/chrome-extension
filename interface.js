@@ -29,7 +29,7 @@ $('#likeButton').on('click', function() {
 
 $('#dislikeButton').on('click', function() {
     // var $btn = $(this).button('loading')
-    console.log("Like button clicked.")
+    console.log("Dislike button clicked.")
     $.ajax({
         type: 'GET',
         url: 'http://photo.yangjunrui.com/dislike',
@@ -41,6 +41,12 @@ $('#dislikeButton').on('click', function() {
             // $btn.button('reset')
         }
     });
+})
+
+$('#refreshButton').on('click', function() {
+    // var $btn = $(this).button('loading')
+    console.log("Like button clicked.")
+    init();
 })
 
 function getRandomNumber(l, r) {
@@ -76,6 +82,9 @@ function getNextImg(color) {
             imgurl = XMLHttpRequest
             $('#likeButton').removeClass("hidden");
             $('#dislikeButton').removeClass("hidden");
+            $('#downloadButton').removeClass("hidden");
+            $('#refreshButton').removeClass("hidden");
+            $("#downloadButton").attr("href", imgurl);
             $.backstretch(imgurl);
         }
     });
